@@ -1,0 +1,8 @@
+{
+  "name": "js_lab_front",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "lodash": "^4.17.21"
+  }
+}

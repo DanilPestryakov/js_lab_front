@@ -1,0 +1,46 @@
+body {
+    padding-left: 10%;
+    padding-right: 10%;
+    align-content: center;
+    height: 100%;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.table-view {
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom-options-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.top-options-block {
+    margin-bottom: 20px;
+}
+
+.header-block {
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+
+.buttons-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.actions-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
