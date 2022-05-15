@@ -3,6 +3,7 @@ import { renderTemplate, calculateIndex } from '../utils.js';
 import { tableHeaderTemplate } from '../../templates/table-header.js';
 import { actionsTemplate } from '../../templates/actions.js'
 import { tableDataTemplate } from '../../templates/table-data.js';
+import openModal from "./modal.js";
 
 function getTableHeaderValues(data) {
 	const mainFields = Object.keys(data[0]).slice(1);
@@ -34,6 +35,8 @@ export default async function createTable() {
 
 	tableObj.append(tableHeader);
 	tableObj.append(tableBody);
+
+	tableObj.on('click', openModal);
 
 	/*$('#salary').html(`
     <th class="form-check form-switch">
