@@ -62,6 +62,7 @@ export function updateTable(pageNum) {
 			if (pageNum)
 				$('#page-number').html(pageNum);
 			sessionStorage.setItem('allCount', data.allCount);
+			sessionStorage.setItem('pageCount', data.pageCount);
 			updateTableData(data.employees, pageNum);
 		})
 		.catch(err => {

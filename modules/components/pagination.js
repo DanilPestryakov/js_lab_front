@@ -1,7 +1,7 @@
 import { updateTable } from '../components/tables.js';
 import { paginationTemplate } from '../../templates/pagination.js';
 import { PAGE_SIZE } from '../config.js';
-import { getCurrentPageSize, renderTemplate } from '../utils.js';
+import { getCurrentPageSize, renderTemplate, getPagesCount } from '../utils.js';
 
 const paginationButtons = [{
 	id: 'previous-button',
@@ -53,8 +53,8 @@ export default function createPagination() {
 		} else if ($('#previous-button').prop('disabled')) {
 			$('#previous-button').prop('disabled', false);
 		}
-		console.log(getCurrentPageSize(pageNum))
-		if (getCurrentPageSize(pageNum) <= PAGE_SIZE) {
+		console.log(getPagesCount())
+		if (getPagesCount() <= pageNum) {
 			$('#next-button').prop('disabled', true);
 		} else if ($('#next-button').prop('disabled')) {
 			$('#next-button').prop('disabled', false);

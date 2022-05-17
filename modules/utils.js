@@ -57,6 +57,11 @@ export function getCurrentPageSize(pageNum) {
 	return totalCount - PAGE_SIZE * (pageNum - 1);
 }
 
+export function getPagesCount() {
+	const pageCount = sessionStorage.getItem('pageCount');
+	return pageCount;
+}
+
 export function getLocalToken() {
 	let token = localStorage.getItem('token')
 	token = JSON.parse(token)
