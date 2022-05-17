@@ -8,7 +8,7 @@ export const confirmModalTemplate = `
         Are you really want to delete user with id <%- id %>?
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" id="close-button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button id="handle-confirm" data-bs-dismiss="modal" type="button" class="btn btn-primary">Delete</button>
     </div>
 </div>`;

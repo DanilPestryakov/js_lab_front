@@ -93,7 +93,6 @@ function updateModalContent(employeeData, modalType) {
 		}
 		$('#modal-content').replaceWith(modalTemplate(templateData));
 	} else {
-
 		confirmHandler = auth;
 		$('#modal-content').replaceWith(_.template(authModalTemplate)());
 	}

@@ -78,6 +78,8 @@ function deleteToken() {
 	});
 
 	$('#create').replaceWith(addButtonHTML);
+	$('#close-button').click();
+	alert("The token has expired. Log in again ")
 }
 
 export async function getToken(params) {
@@ -96,6 +98,6 @@ export async function getToken(params) {
 		title: 'Create'
 	});
 	$('#create').replaceWith(addButtonHTML);
-	setTimeout(deleteToken, 1000 * 300)
+	setTimeout(deleteToken, 1000 * 30)
 }
 

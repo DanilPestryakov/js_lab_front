@@ -27,7 +27,7 @@ export const employeeModalTemplate = `
         </div>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" id="close-button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button id="handle-confirm" type="button" data-bs-dismiss="modal" class="btn btn-primary">Apply</button>
     </div>
 </div>`;
