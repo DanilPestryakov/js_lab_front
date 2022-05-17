@@ -4,7 +4,6 @@ import { employeeModalTemplate } from '../../templates/employee-modal.js';
 import { getToken, putEmployee, postEmployee, deleteEmployee } from '../service.js';
 import {processModalFields, getLocalToken, renderTemplate} from '../utils.js';
 import { updateTable } from '../components/tables.js';
-import {optionsButtonTemplate} from "../../templates/options-button.js";
 
 
 function auth() {
@@ -71,16 +70,9 @@ function deleteConfirmHandler(id) {
 function updateModalContent(employeeData, modalType) {
 
 	let token = getLocalToken();
-	if (token && ((new Date().getTime()) / 1000 - token.timestamp > 300)) {
-		localStorage.removeItem('token');
-	}
+
 	let confirmHandler = () => {};
-	let addButtonHTML = '';
 	if (token) {
-		addButtonHTML = renderTemplate(optionsButtonTemplate, {
-			className: 'btn\ btn-info',
-			title: 'Create'
-		});
 		let modalTemplate;
 		const templateData = processModalFields(employeeData);
 
@@ -101,15 +93,10 @@ function updateModalContent(employeeData, modalType) {
 		}
 		$('#modal-content').replaceWith(modalTemplate(templateData));
 	} else {
-		addButtonHTML = renderTemplate(optionsButtonTemplate, {
-			className: 'btn\ btn-secondary',
-			title: 'Login'
-		});
+
 		confirmHandler = auth;
 		$('#modal-content').replaceWith(_.template(authModalTemplate)());
 	}
-	console.log(addButtonHTML)
-	$('#create').replaceWith(addButtonHTML);
 	$('#handle-confirm').on('click', confirmHandler);
 }
 

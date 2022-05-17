@@ -1,5 +1,6 @@
 import { BASE_URL } from './config.js';
-import { getLocalToken, addFilters, addQueryParams, handleRequest } from './utils.js';
+import {getLocalToken, addFilters, addQueryParams, handleRequest, renderTemplate} from './utils.js';
+import {optionsButtonTemplate} from "../templates/options-button.js";
 
 
 export async function getEmployees(params) {
@@ -68,6 +69,17 @@ export async function deleteEmployee(id) {
 	return handleRequest(url, options);
 }
 
+function deleteToken() {
+	localStorage.removeItem('token');
+	let addButtonHTML = '';
+	addButtonHTML = renderTemplate(optionsButtonTemplate, {
+		className: 'btn\ btn-secondary',
+		title: 'Login'
+	});
+
+	$('#create').replaceWith(addButtonHTML);
+}
+
 export async function getToken(params) {
 	const options = {
 		method: 'POST',
@@ -77,6 +89,13 @@ export async function getToken(params) {
 	const url = `${BASE_URL}/users/login`;
 
 	const payload = await handleRequest(url, options);
-	localStorage.setItem('token', JSON.stringify({token: payload.token, timestamp: (new Date().getTime()) / 1000}));
+	localStorage.setItem('token', JSON.stringify({token: payload.token}));
+	let addButtonHTML = '';
+	addButtonHTML = renderTemplate(optionsButtonTemplate, {
+		className: 'btn\ btn-info',
+		title: 'Create'
+	});
+	$('#create').replaceWith(addButtonHTML);
+	setTimeout(deleteToken, 1000 * 300)
 }
 
