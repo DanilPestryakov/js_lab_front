@@ -2,7 +2,7 @@ import {filterInputTemplate} from '../../templates/filter-input.js';
 import {optionsButtonTemplate} from '../../templates/options-button.js';
 import openModal from './modal.js';
 import {updateTable} from '../components/tables.js';
-import {renderTemplate} from '../utils.js';
+import {getLocalToken, renderTemplate} from '../utils.js';
 
 export default function createTopOptionsBlock() {
 	const topOptionsBlock = $("#top-options-block");
@@ -22,10 +22,20 @@ export default function createTopOptionsBlock() {
 
 	const filtersData = renderTemplate(filterInputTemplate, {items: filters});
 
-	const addButtonHTML = renderTemplate(optionsButtonTemplate, {
-		className: 'btn\ btn-secondary',
-		title: 'Login'
-	});
+	let token = getLocalToken();
+	let addButtonHTML;
+	if (token) {
+		addButtonHTML = renderTemplate(optionsButtonTemplate, {
+			className: 'btn\ btn-info',
+			title: 'Create'
+		});
+	}
+	else {
+		addButtonHTML = renderTemplate(optionsButtonTemplate, {
+			className: 'btn\ btn-secondary',
+			title: 'Login'
+		});
+	}
 	const addButton = $(addButtonHTML);
 	addButton.on('click', openModal);
 
