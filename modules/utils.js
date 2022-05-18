@@ -9,11 +9,9 @@ export function addQueryParams(url, params) {
 export function addFilters(params) {
 	const newParams = params || {};
 
-	/*const filter = $('#filter').val();
-	const salaryOrder = $('#salary-switch').prop('checked')
 
-	newParams.filter = filter.trim();
-	newParams.order = salaryOrder ? 1 : -1;*/
+	const salaryOrder = $('#salary-switch').prop('checked');
+	newParams.order = salaryOrder ? 'desc' : 'asc';
 	const filterName = $('#filter-name').val();
 	const filterSurname = $('#filter-surname').val();
 	if (filterName) {

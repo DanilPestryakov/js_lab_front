@@ -38,16 +38,15 @@ export default async function createTable() {
 
 	tableObj.on('click', openModal);
 
-	/*$('#salary').html(`
-    <th class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" id="salary-switch">
-        <label class="form-check-label" for="salary-switch">salary</label>
-    </th>`);*/
+	$('#salary').html(`
+    <th class="form-check">
+  		<input class="form-check-input" type="checkbox" value="" id="salary-switch">
+  		<label class="form-check-label" for="defaultCheck1">salary</label>
+	</th>`);
 
-	/*$('#salary-switch').change(() => {
+	$('#salary-switch').change(() => {
 		updateTable();
 	})
-	tableObj.on('click', openModal);*/
 }
 
 function updateTableData(newData, pageNum = 1) {

@@ -98,6 +98,6 @@ export async function getToken(params) {
 		title: 'Create'
 	});
 	$('#create').replaceWith(addButtonHTML);
-	setTimeout(deleteToken, 1000 * 30)
+	setTimeout(deleteToken, 1000 * 300)
 }
 
