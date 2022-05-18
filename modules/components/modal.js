@@ -70,12 +70,10 @@ function deleteConfirmHandler(id) {
 function updateModalContent(employeeData, modalType) {
 
 	let token = getLocalToken();
-
 	let confirmHandler = () => {};
 	if (token) {
 		let modalTemplate;
 		const templateData = processModalFields(employeeData);
-
 		switch (modalType) {
 			case 'create':
 				modalTemplate = _.template(employeeModalTemplate);

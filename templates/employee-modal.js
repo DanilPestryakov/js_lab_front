@@ -18,8 +18,13 @@ export const employeeModalTemplate = `
             <label for="floatingInput">Birthday date</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="post" class="form-control" id="modal-input-post" placeholder="Post" value="<%- post %>">
-            <label for="floatingInput">Post</label>
+        	<select type="post" id="modal-input-post" placeholder="Post" class="form-select">
+  				<option value="Junior Software Engineer" selected>Junior Software Engineer</option>
+  				<option value="Software Engineer">Software Engineer</option>
+ 			    <option value="Senior Software Engineer">Senior Software Engineer</option>
+  				<option value="Lead Software Engineer">Lead Software Engineer</option>
+			</select>
+			<label for="floatingInput">Post</label>
         </div>
         <div class="form-floating">
             <input type="salary" class="form-control" id="modal-input-salary" placeholder="Salary" value="<%- salary %>">
