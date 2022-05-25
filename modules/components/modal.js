@@ -68,7 +68,6 @@ function deleteConfirmHandler(id) {
 }
 
 function updateModalContent(employeeData, modalType) {
-
 	let token = getLocalToken();
 	let confirmHandler = () => {};
 	if (token) {

@@ -19,7 +19,7 @@ export const employeeModalTemplate = `
         </div>
         <div class="form-floating mb-3">
         	<select type="post" id="modal-input-post" placeholder="Post" class="form-select">
-  				<option value="Junior Software Engineer" selected>Junior Software Engineer</option>
+  				<option value="Junior Software Engineer">Junior Software Engineer</option>
   				<option value="Software Engineer">Software Engineer</option>
  			    <option value="Senior Software Engineer">Senior Software Engineer</option>
   				<option value="Lead Software Engineer">Lead Software Engineer</option>

@@ -19,8 +19,15 @@ function createTableBody(data, pageNum = 1) {
 	const rows = data.map((item, index) => {
 		item.index = calculateIndex(pageNum, index);
 		item.actions = renderTemplate(actionsTemplate, { employeeId: item.id });
+		let myDate = new Date(item.birthday);
+		console.log(myDate)
+		console.log(myDate.getUTCFullYear())
+		console.log(myDate.getUTCDate())
+
+		item.birthday = myDate.getFullYear() + '-' + String(myDate.getMonth() + 1).padStart(2, '0') + '-' + String(myDate.getDate()).padStart(2, '0')
 		return item;
 	});
+
 	return renderTemplate(tableDataTemplate, { rows });
 }
 

@@ -15,6 +15,7 @@ export async function getEmployees(params) {
 }
 
 export async function putEmployee(id, payload) {
+	console.log(payload)
 	const url = `${BASE_URL}/employees/${id}`;
 	let token = getLocalToken();
 	if (token)
@@ -23,6 +24,8 @@ export async function putEmployee(id, payload) {
 		Authorization: `Bearer ${token}`,
 		'Content-Type': 'application/json',
 	}
+
+	console.log(payload.salary)
 	const options = {
 		method: 'PUT',
 		body: JSON.stringify(payload),

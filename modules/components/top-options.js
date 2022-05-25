@@ -24,6 +24,7 @@ export default function createTopOptionsBlock() {
 
 	let token = getLocalToken();
 	let addButtonHTML;
+	console.log(token)
 	if (token) {
 		addButtonHTML = renderTemplate(optionsButtonTemplate, {
 			className: 'btn\ btn-info',
