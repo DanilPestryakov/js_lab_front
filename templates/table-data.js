@@ -18,7 +18,7 @@ export const tableDataTemplate = `
                 <%= row.post %>
             </td>
             <td>
-                <%= row.salary %>
+                &#36;<%= row.salary %>
             </td>
             <td>
                 <%= row.actions %>
